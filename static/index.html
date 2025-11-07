@@ -1,18 +1,87 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>LiHuaLilyVisual-art-potfolio</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LiHuaLilyVisual-art-portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
-  
   <body>
-      <a href="/" style="font-weight:600; text-decoration:none;">
-            LiHuaLilyVisual-art-potfolio
-          </a>   
+    <header class="site-header">
+      <a href="/" class="brand">LiHuaLilyVisual-art-portfolio</a>
+      <nav class="tabs">
+        <a href="#intro" data-tab="intro">Intro</a>
+        <a href="#ae" data-tab="ae">AE</a>
+        <a href="#digital" data-tab="digital">Digital Art</a>
+        <a href="#video" data-tab="video">Video</a>
+      </nav>
+    </header>
 
-    <h1>WELCOME!</h1>
-    <p id="msg"></p>
+    <main>
+      <section id="intro" class="tab">
+        <h1>Welcome</h1>
+        <p>Hi, I am Lily. This is a selection of my visual work. Use the tabs to browse categories.</p>
+      </section>
+
+      <section id="ae" class="tab" hidden>
+        <h2>After Effects</h2>
+        <div class="gallery">
+          <figure>
+            <img src="/static/img/ae1.jpg" alt="After Effects project 1" />
+            <figcaption>AE Project 1</figcaption>
+          </figure>
+          <figure>
+            <img src="/static/img/ae2.jpg" alt="After Effects project 2" />
+            <figcaption>AE Project 2</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="digital" class="tab" hidden>
+        <h2>Digital Art</h2>
+        <div class="gallery">
+          <figure>
+            <img src="/static/img/d1.jpg" alt="Digital artwork 1" />
+            <figcaption>Digital 1</figcaption>
+          </figure>
+          <figure>
+            <img src="/static/img/d2.jpg" alt="Digital artwork 2" />
+            <figcaption>Digital 2</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="video" class="tab" hidden>
+        <h2>Videos</h2>
+        <div class="video-wrap">
+          <video controls width="720" poster="/static/img/thumbnails/ae1.jpg">
+            <source src="/static/video/ae_demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <!-- Example YouTube embed:
+          <iframe width="720" height="405" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
+          -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© <span id="year"></span> Lily Li</small>
+    </footer>
+
     <script>
-      fetch("/api/hello").then(r=>r.json()).then(d=>{
-        document.getElementById("msg").textContent = d.message;
+      function showTab(id) {
+        document.querySelectorAll('section.tab').forEach(s => s.hidden = true);
+        document.getElementById(id).hidden = false;
+        history.replaceState(null, '', '#' + id);
+      }
+      window.addEventListener('DOMContentLoaded', () => {
+        const start = location.hash.replace('#','') || 'intro';
+        showTab(start);
+        document.querySelectorAll('[data-tab]').forEach(a => {
+          a.addEventListener('click', e => { e.preventDefault(); showTab(a.dataset.tab); });
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
       });
     </script>
   </body>
