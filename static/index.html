@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <title>LiHuaLilyVisual-art-portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a href="/" class="brand">LiHuaLilyVisual-art-portfolio</a>
+      <a class="brand" href="/">LiHuaLilyVisual-art-portfolio</a>
       <nav class="tabs">
         <a href="#intro" data-tab="intro">Intro</a>
         <a href="#ae" data-tab="ae">AE</a>
@@ -19,20 +19,22 @@
     <main>
       <section id="intro" class="tab">
         <h1>Welcome</h1>
-        <p>Hi, I am Lily. This is a selection of my visual work. Use the tabs to browse categories.</p>
+        <p>Hi, I’m Lily. This is my visual art portfolio. Use the tabs to browse categories.</p>
+        <img alt="cover" src="/img/cover.jpg" class="hero" />
       </section>
 
       <section id="ae" class="tab" hidden>
         <h2>After Effects</h2>
         <div class="gallery">
           <figure>
-            <img src="/static/img/ae1.jpg" alt="After Effects project 1" />
+            <img src="/AE/ae1.jpg" alt="AE project 1" />
             <figcaption>AE Project 1</figcaption>
           </figure>
           <figure>
-            <img src="/static/img/ae2.jpg" alt="After Effects project 2" />
+            <img src="/AE/ae2.jpg" alt="AE project 2" />
             <figcaption>AE Project 2</figcaption>
           </figure>
+          <!-- Add more items by copying a <figure> and changing the file name -->
         </div>
       </section>
 
@@ -40,16 +42,15 @@
         <h2>Digital Art</h2>
         <div class="gallery">
           <figure>
-            <img src="/static/img/d1.jpg" alt="Digital artwork 1" />
+            <img src="/img/d1.jpg" alt="Digital art 1" />
             <figcaption>Digital 1</figcaption>
           </figure>
           <figure>
-            <img src="/static/img/d2.jpg" alt="Digital artwork 2" />
+            <img src="/img/d2.jpg" alt="Digital art 2" />
             <figcaption>Digital 2</figcaption>
           </figure>
         </div>
       </section>
-
     </main>
 
     <footer class="site-footer">
@@ -57,7 +58,7 @@
     </footer>
 
     <script>
-      function showTab(id) {
+      function showTab(id){
         document.querySelectorAll('section.tab').forEach(s => s.hidden = true);
         document.getElementById(id).hidden = false;
         history.replaceState(null, '', '#' + id);
@@ -73,3 +74,4 @@
     </script>
   </body>
 </html>
+
