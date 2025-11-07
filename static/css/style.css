@@ -13,7 +13,6 @@
         <a href="#intro" data-tab="intro">Intro</a>
         <a href="#ae" data-tab="ae">AE</a>
         <a href="#digital" data-tab="digital">Digital Art</a>
-        <a href="#video" data-tab="video">Video</a>
       </nav>
     </header>
 
@@ -48,19 +47,6 @@
             <img src="/static/img/d2.jpg" alt="Digital artwork 2" />
             <figcaption>Digital 2</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section id="video" class="tab" hidden>
-        <h2>Videos</h2>
-        <div class="video-wrap">
-          <video controls width="720" poster="/static/img/thumbnails/ae1.jpg">
-            <source src="/static/video/ae_demo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <!-- Example YouTube embed:
-          <iframe width="720" height="405" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
-          -->
         </div>
       </section>
     </main>
