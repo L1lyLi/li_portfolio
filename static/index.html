@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>LiHuaLilyVisual-art-potfolio</title>
+  </head>
+  
+  <body>
+      <a href="/" style="font-weight:600; text-decoration:none;">
+            LiHuaLilyVisual-art-potfolio
+          </a>   
+
+    <h1>WELCOME!</h1>
+    <p id="msg"></p>
+    <script>
+      fetch("/api/hello").then(r=>r.json()).then(d=>{
+        document.getElementById("msg").textContent = d.message;
+      });
+    </script>
+  </body>
+</html>
